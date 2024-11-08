@@ -1,4 +1,3 @@
-import pyttsx3
 import speech_recognition as sr
 import webbrowser 
 from datetime import datetime 
@@ -7,7 +6,6 @@ import playsound
 from gtts import gTTS
 import os
 import requests
-from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 import subprocess
 import psutil
@@ -421,6 +419,7 @@ def xuLy():
 def handle_command():
     while True:
         text = takeCommand().lower()
+        print(text)
 
         if "hello" in text:
             assistant = "Hello, how can I help you?"
@@ -473,7 +472,7 @@ def handle_command():
             assistant = "According to Wikipedia " + wikipedia.summary(text, sentences=1)
             print(assistant)
             speak(assistant)
-        elif "change language Vietnamese" in text:
+        elif "change language" in text:
             speak(f"The language has been changed to Vietnamese")
             change_language('vi')
             break
@@ -489,5 +488,3 @@ if __name__== '__main__':
             tmp=xuLy()
         else:
             tmp=handle_command()
-
-#todoist
