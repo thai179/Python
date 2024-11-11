@@ -1,0 +1,7 @@
+speechrecognition
+gtts
+playsound
+requests
+deep-translator
+psutil
+wikipedia
